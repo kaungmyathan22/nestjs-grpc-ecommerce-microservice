@@ -58,7 +58,7 @@ export class OrderService implements OnModuleInit {
 
     if (decreasedStockData.status === HttpStatus.CONFLICT) {
       // deleting order if decreaseStock fails
-      await this.repository.delete(order);
+      await this.repository.delete(order.id);
 
       return {
         id: null,
